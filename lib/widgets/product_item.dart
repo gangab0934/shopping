@@ -28,21 +28,17 @@ class ProductItem extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   product.title,
                   style: TextStyle(fontWeight: FontWeight.bold),
                 ),
-                Text("\$${product.price.toStringAsFixed(2)}"),
-                SizedBox(height: 4),
+                Text('\$${product.price}', style: TextStyle(color: Colors.green)),
+                SizedBox(height: 8),
                 ElevatedButton(
                   onPressed: onAddToCart,
-                  child: Text("Add to Cart"),
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                  ),
+                  child: Text('Add to Cart'),
                 ),
               ],
             ),
